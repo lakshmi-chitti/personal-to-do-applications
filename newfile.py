@@ -42,32 +42,32 @@ def main():
             description = input("Enter task description: ")
             category = input("Enter category (Work/Personal/Urgent): ")
             tasks.append(Task(title, description, category))
-            print("✅ Task Added Successfully!")
+            print(" Task Added Successfully!")
 
         elif choice == '2':
             for i, task in enumerate(tasks):
-                status = "✔ Completed" if task.completed else "❌ Pending"
+                status = " Completed" if task.completed else " Pending"
                 print(f"{i+1}. {task.title} - {task.description} [{task.category}] --> {status}")
 
         elif choice == '3':
             num = int(input("Enter task number to mark completed: ")) - 1
             if 0 <= num < len(tasks):
                 tasks[num].mark_completed()
-                print("✅ Task marked as completed.")
+                print(" Task marked as completed.")
 
         elif choice == '4':
             num = int(input("Enter task number to delete: ")) - 1
             if 0 <= num < len(tasks):
                 tasks.pop(num)
-                print("🗑 Task deleted successfully.")
+                print("Task deleted successfully.")
 
         elif choice == '5':
             save_tasks(tasks)
-            print("📂 Tasks saved. Exiting...")
+            print("Tasks saved. Exiting...")
             break
 
         else:
-            print("❌ Invalid option, try again!")
+            print(" Invalid option, try again!")
 
 
 if __name__ == "__main__":
